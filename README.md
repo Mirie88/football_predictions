@@ -14,12 +14,18 @@ Leaderboard tracking
 
 
 TECH STACK
+
 Laravel 10+
- Laravel WebSockets
+
+Laravel WebSockets
+
 MySQL
+
 Sanctum 
 
 FEATURES
+
+
 ✅Secure predictions with validation
 
 ✅ Scheduled reward calculation
@@ -30,24 +36,19 @@ FEATURES
 
 
  PROJECT SETUP
- 1. Clone the Repository
- git clone https://github.com/Mirie88/football_predictions.git
- cd football_predictions
+ Clone the Repository
+ 
+  git clone https://github.com/Mirie88/football_predictions.git
+  cd football_predictions
 
-2. Install Dependencies
-composer install
-npm install && npm run dev
+ Install Dependencies
+ 
+  composer install
+  npm install && npm run dev
 
+ Setup Environment
 
-3. Setup Environment
-
-bash
-Copy
-
-cp .env.example .env
-Then edit .env:
-
-Edit .env
+ edit .env:
 
 APP_NAME=FootballPredictions
 APP_URL=http://localhost
@@ -62,25 +63,28 @@ DB_PASSWORD
 
 
 GENERATE KEY
+
 php artisan key:generate
 
+ SETUP DATABASE
+ 
+  Create your database in MySQL
 
-4. Set Up Database
-Create your database in MySQL
+   php artisan migrate --seed
 
-php artisan migrate --seed
+SRART SERVER
 
-
-5. Start the Server
 php artisan serve
 By default: http://localhost:8000
 
-6. WebSocket Server
- using Laravel WebSockets:
+ WEBSOCKET SERVER
+ 
+ use Laravel WebSockets
 php artisan websockets:serve
 Clients connect via: ws://localhost:6001/app/your_key
 
- Authentication
+ AUTHENTICATION
+ 
 Use Laravel Sanctum for API token authentication.
 
 To login/register, use:
@@ -93,17 +97,22 @@ Add the token to headers:
 Authorization: Bearer <token>
 
 
-🔌 API Reference
+API Reference
 Method	Endpoint	Description
+
 GET	/api/matches/upcoming	List upcoming matches
+
 GET	/api/matches/history	List past matches
+
 POST	/api/predictions	Submit a prediction
+
 GET	/api/leaderboards/{league_id}	Get leaderboard
+
 POST	/api/leagues	Create custom league
 
 
 
 
-p
+
 
 
